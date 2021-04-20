@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@babel/eslint-parser": "^7.13.14",
+    "@reduxjs/toolkit": "^1.5.1",
     "@types/cookie-parser": "^1.4.2",
     "@types/dotenv": "^8.2.0",
     "@types/next-redux-saga": "^3.0.2",

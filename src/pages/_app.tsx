@@ -1,12 +1,11 @@
 import React from 'react'
 import NextApp, { AppProps } from 'next/app'
 import { DefaultSeo } from 'next-seo'
-import wrapper from '../stores/store/configureStore'
+import { wrapper } from '../stores/store'
 import { AppLayout, Header, Contents, Footer } from '../components'
 import { createGlobalStyle, ServerStyleSheet } from 'styled-components'
 import Head from 'next/head'
 import nextSeoConfig from '../../next-seo.config'
-
 
 const App = ({ Component, pageProps }: AppProps) => {
   /**
@@ -18,8 +17,8 @@ const App = ({ Component, pageProps }: AppProps) => {
       id: 'config-2',
       name: 'viewport',
       content:
-        'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0, viewport-fit=cover'
-    }
+        'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0, viewport-fit=cover',
+    },
   ]
 
   return (
@@ -57,18 +56,18 @@ App.getInitialProps = async (context: any) => {
       originalRenderPage({
         // @ts-ignore
         enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />),
-  })
+      })
     const initialProps = await NextApp.getInitialProps(context)
     return {
       ...initialProps,
       styles: (
         <>
           {/* @ts-ignore */}
-    {initialProps.styles}
-    {sheet.getStyleElement()}
-    </>
-  ),
-  }
+          {initialProps.styles}
+          {sheet.getStyleElement()}
+        </>
+      ),
+    }
   } catch (e) {
     console.error(e)
   } finally {
