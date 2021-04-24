@@ -10,5 +10,5 @@ const Header = styled.header`
 
 export default {
   AppLayout,
-  Header
+  Header,
 }

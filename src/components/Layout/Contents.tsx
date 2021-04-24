@@ -5,11 +5,7 @@ interface IContentsProps {
 }
 
 const Contents: FC<IContentsProps> = ({ children }) => {
-  return (
-    <main>
-      {children}
-    </main>
-  )
+  return <main>{children}</main>
 }
 
 export default memo(Contents)

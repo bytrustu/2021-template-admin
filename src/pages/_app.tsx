@@ -16,8 +16,7 @@ const App = ({ Component, pageProps }: AppProps) => {
     {
       id: 'config-2',
       name: 'viewport',
-      content:
-        'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0, viewport-fit=cover',
+      content: 'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0, viewport-fit=cover',
     },
   ]
 
@@ -73,7 +72,6 @@ App.getInitialProps = async (context: any) => {
   } finally {
     sheet.seal()
   }
-
 }
 
 const GlobalStyles = createGlobalStyle`
@@ -102,6 +100,5 @@ const GlobalStyles = createGlobalStyle`
     height: 100%;
   }
 `
-
 
 export default wrapper.withRedux(App)

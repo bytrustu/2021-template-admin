@@ -2,15 +2,11 @@ import React, { FC } from 'react'
 import ReactDOM from 'react-dom'
 
 interface Props {
-  children: React.ReactNode;
-  container?: HTMLElement;
+  children: React.ReactNode
+  container?: HTMLElement
 }
 
-const Portal: FC<Props> = ({
- children,
- container,
-}) => {
-
+const Portal: FC<Props> = ({ children, container }) => {
   let containerEl: HTMLElement
 
   if (container) {

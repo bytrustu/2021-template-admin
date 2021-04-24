@@ -10,10 +10,10 @@ const nextSeoConfig = {
         url: `${process.env.webUrl}/meta/meta-default.jpg`,
         width: 1200,
         height: 630,
-        alt: 'template-admin'
-      }
-    ]
-  }
+        alt: 'template-admin',
+      },
+    ],
+  },
 }
 
 export default nextSeoConfig
