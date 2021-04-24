@@ -1,7 +1,7 @@
 import React, { FC, memo, useEffect } from 'react'
 import styled from 'styled-components'
 
-import Portal from 'src/components/Overlays/Portal'
+import Portal from 'src/overlays/Portal'
 import { isClient } from 'src/utils'
 
 export interface OverlayProps {
@@ -59,7 +59,7 @@ export const OverlaidPortal: FC<OverlayProps> = memo(
         </Overlay>
       </Portal>
     )
-  }
+  },
 )
 
 export const Overlay = styled.div<{ zIndex?: number; overlayColor: string; dimmer: boolean; visible: boolean }>`

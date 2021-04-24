@@ -1,5 +1,5 @@
 import React, { FC, ReactElement } from 'react'
-import S from './Style'
+import S from 'src/layout/Style'
 
 interface IAppLayoutProps {
   children: ReactElement | ReactElement[]
