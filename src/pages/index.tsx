@@ -2,7 +2,7 @@ import React, { useCallback } from 'react'
 import { increment, decrement, incrementByAmount } from '../stores/reducers/counterSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../stores/store'
-import { OverlaidPortal } from '../components/Overlays/OverlaidProtal'
+import { OverlaidPortal } from 'src/overlays'
 
 const index = () => {
   const dispatch = useDispatch()
@@ -16,7 +16,7 @@ const index = () => {
     <OverlaidPortal opened>
       <div>
         {count}
-        <button type="button" onClick={onClickHandler}>
+        <button type='button' onClick={onClickHandler}>
           버튼
         </button>
       </div>
