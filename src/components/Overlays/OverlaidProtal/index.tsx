@@ -2,6 +2,7 @@ import React, { FC, memo, useEffect } from 'react'
 import styled from 'styled-components'
 
 import Portal from 'src/components/Overlays/Portal'
+import { isClient } from 'src/utils'
 
 export interface OverlayProps {
   className?: string
@@ -77,11 +78,3 @@ export const Overlay = styled.div<{ zIndex?: number; overlayColor: string; dimme
   opacity: ${(props) => (props.visible ? 'visible' : 'hidden')};
   overscroll-behavior: contain;
 `
-
-export function isClient() {
-  return typeof window !== 'undefined' && !!window.document
-}
-
-export function isServer() {
-  return !isClient()
-}
