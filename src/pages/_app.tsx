@@ -2,7 +2,7 @@ import React from 'react'
 import NextApp, { AppProps } from 'next/app'
 import { DefaultSeo } from 'next-seo'
 import { wrapper } from '../stores/store'
-import { AppLayout, Header, Contents, Footer } from '../components'
+import { AppLayout, Header, Contents, Footer } from '../layout'
 import { createGlobalStyle, ServerStyleSheet } from 'styled-components'
 import Head from 'next/head'
 import nextSeoConfig from '../../next-seo.config'
@@ -39,6 +39,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       <AppLayout>
         <Header />
         <Contents>
+          <div className='ui-modal' id='ui-modal' />
           <Component {...pageProps} />
         </Contents>
         <Footer />

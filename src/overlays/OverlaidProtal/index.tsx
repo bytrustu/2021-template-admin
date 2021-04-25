@@ -13,6 +13,7 @@ export interface OverlayProps {
   closeable?: boolean
   onClose?: () => void
   zIndex?: number
+  container?: HTMLElement
 }
 
 export const OverlaidPortal: FC<OverlayProps> = memo(
@@ -25,6 +26,7 @@ export const OverlaidPortal: FC<OverlayProps> = memo(
     closeable = true,
     onClose,
     zIndex = 3000,
+    container = document.body,
   }) => {
     useEffect(() => {
       if (isClient() && dimmer) {
@@ -42,11 +44,11 @@ export const OverlaidPortal: FC<OverlayProps> = memo(
     }
 
     if (!dimmer) {
-      return <Portal container={document.body}>{children}</Portal>
+      return <Portal container={container}>{children}</Portal>
     }
 
     return (
-      <Portal container={document.body}>
+      <Portal container={container}>
         <Overlay
           className={className}
           zIndex={zIndex}
@@ -75,6 +77,6 @@ export const Overlay = styled.div<{ zIndex?: number; overlayColor: string; dimme
   bottom: 0;
   overflow: hidden;
   background-color: ${(props) => (props.dimmer ? props.overlayColor : 'transparent')};
-  opacity: ${(props) => (props.visible ? 'visible' : 'hidden')};
+  visibility: ${(props) => (props.visible ? 'visible' : 'hidden')};
   overscroll-behavior: contain;
 `
